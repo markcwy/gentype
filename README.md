@@ -2,7 +2,7 @@
 
 For this tutorial, we're going to learn how to create bars that respond to sound input that look a little like this:
 
-### How to access your microphone.
+## Step 1: How to access your microphone.
 
 ![sine function](../images/graph-sine-cosine.png)
 
