@@ -175,7 +175,7 @@ Now we just need to change the way it looks to create the desired watery effect.
 
 First, we need to make the lines fade out. To do this, we need to draw the background a little differently:
 
-```
+```js
 void setup() {
   size(500, 500);
   background(0);      //we draw the initial background here
