@@ -15,10 +15,11 @@ float angle;        //the angle between the origin and the point
 x = rad * sin(angle);
 y = rad * cos(angle);
 ```
-You won't see much here because the value will move between -1 and 1. So let's multiply some number to the sine function.
+In order to make the numbers a little more manageable, we can convert angle from radians into degrees. This makes the math easier (from 0 - 360).
 
 ```js
-diam = sin(angle) * 200;
+x = rad * sin(radians(angle));      //this converts your input in degrees into radians.
+y = rad * cos(radians(angle));
 ```
 
 And add some number to set the minimum value as well as to prevent getting the negative value.
