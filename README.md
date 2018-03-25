@@ -2,30 +2,15 @@
 
 For this tutorial, we're going to learn how to create interactive water ripples that look like this:
 
-## Step 1: How to access your microphone.
-
 ![ripple](ripples.png)
 
-The only thing you need to know now is that the value we get from the sine function changes smoothly between -1 and 1 as `x` or `angle` increases.
+## Step 1: Drawing a circle with points.
 
-```java
-float diam;
-float angle;
+In order to create a ripple that has an uneven stroke, we need a to create a circle with points that we can manipulate. As we learnt from last week, the x and y coordinates of the points along a circle are:
 
-void setup() {
-  size(400, 400);
-  
-  diam = 20;
-  angle = 0;
-}
-
-void draw() {
-  background(200);
-  
-  ellipse(width/2, height/2, diam, diam);
-  diam = sin(angle);
-  angle += 0.01;
-}
+```js
+x = sin(angle);
+y = cos(angle);
 ```
 You won't see much here because the value will move between -1 and 1. So let's multiply some number to the sine function.
 
