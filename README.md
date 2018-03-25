@@ -215,5 +215,5 @@ void draw() {
 You should see a slight blue, wave ripple wherever you click now! Try playing around with the different values and see how that changes the way your wave looks.
 
 ## Learn more about Noise
-[noise() at Processing.org] (https://processing.org/reference/noise_.html)
+[noise() at Processing.org](https://processing.org/reference/noise_.html)
 
