@@ -46,10 +46,10 @@ By enclosing all these points within `beginShape()` and `endShape()` tags, we ca
 
 ```js
 beginShape();
- for (float angle = 0; angle < 360; angle += 1) {
-   x = rad * sin(radians(angle));
-   y = rad * cos(radians(angle));
-   vertex(x, y);
+for (float angle = 0; angle < 360; angle += 1) {
+  x = rad * sin(radians(angle));
+  y = rad * cos(radians(angle));
+  vertex(x, y);
 }
 endShape();
 ```
