@@ -1,6 +1,6 @@
-# Trigonometry
+# Responsive Sound Interface
 
-There are a lot of interesting things about trigonometry, but here, we will look at a few examples on how it can be used for creating organic movements.
+For this tutorial, we're going to learn how to create bars that respond to sound input that look a little like this:
 
 ## Sine / Cosine
 
