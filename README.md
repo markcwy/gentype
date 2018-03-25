@@ -4,7 +4,7 @@ For this tutorial, we're going to learn how to create interactive water ripples 
 
 ## Step 1: How to access your microphone.
 
-![sine function](../ripples.png)
+![sine function](ripples.png)
 
 The only thing you need to know now is that the value we get from the sine function changes smoothly between -1 and 1 as `x` or `angle` increases.
 
