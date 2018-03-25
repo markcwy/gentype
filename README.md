@@ -15,7 +15,7 @@ float angle;        //the angle between the origin and the point
 x = rad * sin(angle);
 y = rad * cos(angle);
 ```
-In order to make the numbers a little more manageable, we can convert `angle` from radians into degrees. This makes the math easier (from 0 - 360).
+In order to make the numbers a little more manageable, we can convert `angle` from degrees into radians:
 
 ```js
 x = rad * sin(radians(angle));      //this converts your input in degrees into radians.
