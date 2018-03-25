@@ -46,7 +46,7 @@ By enclosing all these points within `beginShape()` and `endShape()` tags, we ca
 
 ```js
 beginShape();
-for (float angle = 0; angle < 360; angle += 1) {
+for (float angle = 0; angle < 360; angle ++) {
   x = rad * sin(radians(angle));
   y = rad * cos(radians(angle));
   vertex(x, y);
@@ -54,7 +54,7 @@ for (float angle = 0; angle < 360; angle += 1) {
 endShape();
 ```
 
-Let's see what we've got:
+Let's see what we've got so far:
 
 ```js
 float rad = 100;
@@ -71,10 +71,10 @@ void draw() {
   stroke(255);
 
   beginShape();
-  for (float angle = 0; angle < 360; angle += 1) {
+  for (float angle = 0; angle < 360; angle ++) {
     x = rad * sin(radians(angle));
     y = rad * cos(radians(angle));
-    vertex(x, y);
+    curveVertex(x, y);                //we're using curveVertex here so that the circle is round!
   }  
   endShape();
 }
