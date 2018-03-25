@@ -143,13 +143,15 @@ void mousePressed() {
 
 ## Step 4: It's time to make a wavy ripple!
 
-Now that we've got our expanding circle, we can start to manipulate the individual points. Instead of using `random()` to add a little distortion to the points, we're gonna use `noise()` instead. Noise produces a more natural, harmonic succession of random numbers than random.
+Now that we've got our expanding circle, we can start to manipulate the individual points. Instead of using `random()` to add a little distortion to the points, we're gonna use `noise()` instead. `noise()` produces a more natural, harmonic succession of random numbers than `random()`.
+
+`noise()` requires an input coordinate to distort around, and it produces a value between 0.0 and 0.1. So in order to distort the stroke of our ripple, we need to distort it's radius. 
 
 ```js
 beginShape();
-for (float angle = 0; angle < 360; angle += 10) {       //increase the gaps between points to make a smoother distortion
-  rad = initialRad + increment + noise(x)*10;           //we will input the x coordinate into noise() to generate 
-  x = rad * sin(radians(angle));                        //distortion incremently. Multiplying by 10 makes it more obvious.
+for (float angle = 0; angle < 360; angle ++) {   
+  rad = initialRad + increment + noise(x)*10;      //we will distort around the x coordinate    
+  x = rad * sin(radians(angle));                   //and multiply it so it's more obvious.    
   y = rad * cos(radians(angle));
   curveVertex(x, y);
 }
