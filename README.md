@@ -114,7 +114,7 @@ void mousePressed() {
 
 ## Step 3: Make the ripple expand from your mouse location.
 
-In step 1, we translated the sketch to the middle by using `translate(width/2, height/2)`. Let's see if we can set that location to be `(mouseX, mouseY)` upon click!
+In step 1, we translated the sketch to the middle by using `translate(width/2, height/2)`. Let's see if we can set that location to be `(mouseX, mouseY)` when you click!
 
 First, let's create a variable for storing your `mousePressed()` location:
 
