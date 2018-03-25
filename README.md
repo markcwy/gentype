@@ -178,17 +178,21 @@ First, we need to make the lines fade out. To do this, we need to draw the backg
 ```js
 void setup() {
   size(500, 500);
-  background(0);      //we draw the initial background here
+  background(0);      //we draw the background in setup instead
 }
 
 void draw() {
   fill(0, 10);        //we draw a semi transparent black rectangle every frame on draw.
+  noStroke();
   rect(0, 0, width, height);
   translate(xPos,yPos);
   .
   .
   .
+}
 ```
+
+This will create a fading effect on the lines. Next, we change the way the strokes look:
 
 ```js
 .
@@ -199,10 +203,12 @@ void draw() {
   background(0);
   noFill();
   strokeWeight(12);             //thicker strokes to make them overlap a little
-  stroke(random(120, 170), 210, 245, 25);
+  stroke(150, 200, 250, 50);    //a semi transparent stroke to make the overlap nicely
   .
   .
   .
 }
 ```
+
+And we're done!
 
