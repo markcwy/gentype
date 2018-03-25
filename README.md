@@ -158,3 +158,14 @@ for (float angle = 0; angle < 360; angle ++) {
 endShape(CLOSE);
 ```
 
+You should now see a very, very distorted line. We can increase the increments in `angle` to make it a little smoother:
+```js
+beginShape();
+for (float angle = 0; angle < 360; angle += 10) {   
+  .
+  .
+  .
+}
+endShape(CLOSE);
+```
+
