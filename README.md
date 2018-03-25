@@ -169,3 +169,40 @@ for (float angle = 0; angle < 360; angle += 10) {
 endShape(CLOSE);
 ```
 
+## Step 5: Time to make it look like water!
+
+Now we just need to change the way it looks to create the desired watery effect. 
+
+First, we need to make the lines fade out. To do this, we need to draw the background a little differently:
+
+```
+void setup() {
+  size(500, 500);
+  background(0);      //we draw the initial background here
+}
+
+void draw() {
+  fill(0, 10);        //we draw a semi transparent black rectangle every frame on draw.
+  rect(0, 0, width, height);
+  translate(xPos,yPos);
+  .
+  .
+  .
+```
+
+```js
+.
+.
+.
+void draw() {
+  translate(xPos, yPos);      
+  background(0);
+  noFill();
+  strokeWeight(12);             //thicker strokes to make them overlap a little
+  stroke(random(120, 170), 210, 245, 25);
+  .
+  .
+  .
+}
+```
+
