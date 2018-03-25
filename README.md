@@ -6,7 +6,7 @@ For this tutorial, we're going to learn how to create interactive water ripples 
 
 ## Step 1: Drawing a circle with points.
 
-In order to create a ripple that has an uneven stroke, we need a to create a circle with points that we can manipulate. As we learnt from last week, the x and y coordinates of the points along a circle are:
+In order to create a ripple that has an uneven stroke, we need a to draw a circle with points that we can manipulate. As we learnt from last week, the x and y coordinates of the points along a circle are:
 
 ```js
 float rad;          //the radius of the circle
@@ -22,14 +22,25 @@ x = rad * sin(radians(angle));      //this converts your input in degrees into r
 y = rad * cos(radians(angle));
 ```
 
-And add some number to set the minimum value as well as to prevent getting the negative value.
+We can now use these x and y coordinates to create points at every degree (0 - 360):
 
 ```js
-ellipse(width/2, height/2, diam, diam);
-diam = 150 + sin(angle) * 100;
-angle += 0.02;
+x1 = rad * sin(radians(0));
+y1 = rad * cos(radians(0));
+vertex(x1, y1);
+
+x2 = rad * sin(radians(1));
+y2 = rad * cos(radians(1));
+vertex(x2, y2);
+
+.
+.
+.
+
+x360 = rad * sin(radians(359));
+y360 = rad * cos(radians(359));
+vertex(x359, y359);
 ```
-We get almost breathing-like animation. `sin()` is great to make your animation more natural.
 
 
 ## Circular motion using trigonometry
