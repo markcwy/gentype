@@ -51,7 +51,7 @@ for (float angle = 0; angle < 360; angle ++) {
   y = rad * cos(radians(angle));
   vertex(x, y);
 }
-endShape();
+endShape(CLOSE);
 ```
 
 Let's see what we've got so far:
@@ -76,7 +76,7 @@ void draw() {
     y = rad * cos(radians(angle));
     curveVertex(x, y);                //we're using curveVertex here so that the circle is round!
   }  
-  endShape();
+  endShape(CLOSE);
 }
 ```
 
