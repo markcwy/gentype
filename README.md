@@ -15,14 +15,14 @@ float angle;        //the angle between the origin and the point
 x = rad * sin(angle);
 y = rad * cos(angle);
 ```
-In order to make the numbers a little more manageable, we can convert angle from radians into degrees. This makes the math easier (from 0 - 360).
+In order to make the numbers a little more manageable, we can convert `angle` from radians into degrees. This makes the math easier (from 0 - 360).
 
 ```js
 x = rad * sin(radians(angle));      //this converts your input in degrees into radians.
 y = rad * cos(radians(angle));
 ```
 
-We can now use these x and y coordinates to create points at every degree (0 - 360):
+We can now use these x and y coordinates to create points at every degree:
 
 ```js
 x1 = rad * sin(radians(0));
