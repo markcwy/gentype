@@ -4,6 +4,7 @@ For this tutorial, we're going to learn how to create interactive water ripples 
 
 ![ripple](ripples.png)
 
+
 ## Step 1: Drawing a circle with points.
 
 In order to create a ripple that has an uneven stroke, we need a to draw a circle with points that we can manipulate. As we learnt from last week, the x and y coordinates of the points along a circle are:
@@ -80,31 +81,26 @@ void draw() {
 }
 ```
 
-## Circular motion using trigonometry
 
-```java
-float xpos;
-float ypos;
-float diam;
-float angle;
+## Step 2: Make the ripple expand!
 
-void setup() {
-  size(400, 400);
-  background(200);
-  
-  diam = 20;
-  angle = 0;
+Now that we've got our circle, we can make it expand by increasing its radius, `rad`:
+```js
+float increment = 0;         //we can make a variable that increases the radius
+float initialRad = 10;       //and another variable that holds the initial value of the radius
+.
+.
+.
+beginShape();
+for (float angle = 0; angle < 360; angle ++) {
+  rad = initialRad + increment;
+  x = rad * sin(radians(angle));
+  y = rad * cos(radians(angle));
+  vertex(x, y);
 }
+endShape(CLOSE);
 
-void draw() {
-  noStroke();
-  fill(0);
-  ellipse(xpos, ypos, 2, 2);
-  
-  xpos = width/2 + cos(angle) * 200;
-  ypos = height/2 + sin(angle) * 200;
-  angle += 0.03;
-}
+increment++;
 ```
 
 The value you add (`width/2` or `height/2`) will be the center point, the value you multiply (`200`) will be the diameter, and the amount of change (`angle`) is the speed of the circle. Now, you can think of these three values as something you can control.
