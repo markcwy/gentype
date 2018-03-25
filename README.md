@@ -2,7 +2,7 @@
 
 For this tutorial, we're going to learn how to create interactive water ripples that look like this:
 
-![ripple](ripples.png)
+![ripple](ripple.png)
 
 
 ## Step 1: Drawing a circle with points.
