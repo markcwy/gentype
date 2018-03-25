@@ -199,8 +199,10 @@ This will create a fading effect on the lines. Next, we change the way the strok
 .
 .
 void draw() {
+  fill(0, 10);        
+  noStroke();
+  rect(0, 0, width, height);
   translate(xPos, yPos);      
-  background(0);
   noFill();
   strokeWeight(12);             //thicker strokes to make them overlap a little
   stroke(150, 200, 250, 50);    //a semi transparent stroke to make the overlap nicely
@@ -210,5 +212,8 @@ void draw() {
 }
 ```
 
-And we're done!
+You should see a slight blue, wave ripple wherever you click now! Try playing around with the different values and see how that changes the way your wave looks.
+
+## Learn more about Noise
+![noise() at Processing.org] (https://processing.org/reference/noise_.html)
 
