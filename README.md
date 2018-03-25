@@ -82,12 +82,13 @@ void draw() {
 ```
 
 
-## Step 2: Make the ripple expand!
+## Step 2: Make the ripple expand.
 
 Now that we've got our circle, we can make it expand by increasing its radius, `rad`:
 ```js
 float increment = 0;         //we can make a variable that increases the radius
-float initialRad = 10;       //and another variable that holds the initial value of the radius
+float initialRad = 5;       //and another variable that holds the initial value of the radius
+float rad;
 .
 .
 .
@@ -103,14 +104,39 @@ endShape(CLOSE);
 increment++;
 ```
 
-The value you add (`width/2` or `height/2`) will be the center point, the value you multiply (`200`) will be the diameter, and the amount of change (`angle`) is the speed of the circle. Now, you can think of these three values as something you can control.
+We can reset `increment` upon clicking the mouse by adding a `mousePresed()` function:
 
 ```js
-xpos = width/2 + cos(angle / 3) * width/2;
-ypos = height/2 + sin(angle) * height/2;
-angle += 0.03;
+void mousePressed() {
+  increment = 0;
+}
 ```
 
+## Step 3: Make the ripple expand from your mouse location.
+
+In step 1, we translated the sketch to the middle by using `translate(width/2, height/2)`. Let's see if we can set that location to be `(mouseX, mouseY)` upon click!
+
+First, let's create a variable for storing your `mousePressed()` location:
+
+```js
+float xPos, yPos;
+.
+.
+.
+void draw() {
+  translate(xPos, yPos);    //we will translate the sketch based on this position
+}
+```
+
+Now we can store your mouse's position by going into `mousePressed()` and assigning them the right values:
+
+```js
+void mousePressed() {
+  increment = 0;
+  xPos = mouseX;
+  yPos = mouseY;
+}
+```
 
 
 ## Further learning
