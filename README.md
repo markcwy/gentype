@@ -9,7 +9,7 @@ For this tutorial, we're going to learn how to create interactive water ripples 
 
 In order to create a ripple that has an uneven stroke, we need a to draw a circle with points that we can manipulate. As we learnt from last week, the x and y coordinates of the points along a circle are:
 
-```js
+```java
 float rad;          //the radius of the circle
 float angle;        //the angle between the origin and the point
 
@@ -57,7 +57,7 @@ endShape(CLOSE);
 
 Let's see what we've got so far:
 
-```js
+```java
 float rad = 100;
 float x, y;
 
@@ -85,7 +85,7 @@ void draw() {
 ## Step 2: Make the ripple expand.
 
 Now that we've got our circle, we can make it expand by increasing its radius, `rad`:
-```js
+```java
 float increment = 0;         //we can make a variable that increases the radius
 float initialRad = 5;       //and another variable that holds the initial value of the radius
 float rad;
@@ -118,7 +118,7 @@ In step 1, we translated the sketch to the middle by using `translate(width/2, h
 
 First, let's create a variable for storing your `mousePressed()` location:
 
-```js
+```java
 float xPos, yPos;
 .
 .
@@ -145,7 +145,7 @@ void mousePressed() {
 
 Now that we've got our expanding circle, we can start to manipulate the individual points. Instead of using `random()` to add a little distortion to the points, we're gonna use `noise()` instead. `noise()` produces a more natural, harmonic succession of random numbers than `random()`.
 
-`noise()` requires an input coordinate to distort around, and it produces a value between 0.0 and 0.1. So in order to distort the stroke of our ripple, we need to distort it's radius. 
+`noise()` requires an input coordinate to distort around, and it produces a value between 0.0 and 1.0. So in order to distort the stroke of our ripple, we need to distort it's radius. 
 
 ```js
 beginShape();
@@ -159,7 +159,7 @@ endShape(CLOSE);
 ```
 
 You should now see a very, very distorted line. We can increase the increments in `angle` to make it a little smoother:
-```js
+```java
 beginShape();
 for (float angle = 0; angle < 360; angle += 10) {   
   .
