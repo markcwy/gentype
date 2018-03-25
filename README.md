@@ -1,6 +1,6 @@
 # Water Ripples
 
-For this tutorial, we're going to learn how to create water ripples that look like this:
+For this tutorial, we're going to learn how to create interactive water ripples that look like this:
 
 ## Step 1: How to access your microphone.
 
