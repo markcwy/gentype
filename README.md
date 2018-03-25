@@ -9,8 +9,11 @@ For this tutorial, we're going to learn how to create interactive water ripples 
 In order to create a ripple that has an uneven stroke, we need a to create a circle with points that we can manipulate. As we learnt from last week, the x and y coordinates of the points along a circle are:
 
 ```js
-x = sin(angle);
-y = cos(angle);
+float rad;          //the radius of the circle
+float angle;        //the angle between the origin and the point
+
+x = rad * sin(angle);
+y = rad * cos(angle);
 ```
 You won't see much here because the value will move between -1 and 1. So let's multiply some number to the sine function.
 
