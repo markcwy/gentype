@@ -45,7 +45,19 @@ vertex(x359, y359);
 By enclosing all these points within `beginShape()` and `endShape()` tags, we can draw a circle. We can also use a loop to go through every degree easily:
 
 ```js
-float rad = 10;
+beginShape();
+ for (float angle = 0; angle < 360; angle += 1) {
+   x = rad * sin(radians(angle));
+   y = rad * cos(radians(angle));
+   vertex(x, y);
+}
+endShape();
+```
+
+Let's see what we've got:
+
+```js
+float rad = 100;
 float x, y;
 
 void setup() {
@@ -53,6 +65,7 @@ void setup() {
 }
 
 void draw() {
+  translate(width/2, height/2);       //moving the circle to the middle.
   background(0);
   noFill();
   stroke(255);
