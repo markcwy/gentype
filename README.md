@@ -97,7 +97,7 @@ for (float angle = 0; angle < 360; angle ++) {
   rad = initialRad + increment;
   x = rad * sin(radians(angle));
   y = rad * cos(radians(angle));
-  vertex(x, y);
+  curveVertex(x, y);
 }
 endShape(CLOSE);
 
@@ -125,6 +125,9 @@ float xPos, yPos;
 .
 void draw() {
   translate(xPos, yPos);    //we will translate the sketch based on this position
+  .
+  .
+  .
 }
 ```
 
@@ -138,9 +141,18 @@ void mousePressed() {
 }
 ```
 
+## Step 4: It's time to make a wavy ripple!
 
-## Further learning
-- [Processing trigonometry tutorial](https://processing.org/tutorials/trig/)
-- [Lissajous curve](https://en.wikipedia.org/wiki/Lissajous_curve)
-- Try graphing your motion first at http://desmos.com
+Now that we've got our expanding circle, we can start to manipulate the individual points. Instead of using `random()` to add a little distortion to the points, we're gonna use `noise()` instead. Noise produces a more natural, harmonic succession of random numbers than random.
+
+```js
+beginShape();
+for (float angle = 0; angle < 360; angle += 10) {       //increase the gaps between points to make a smoother distortion
+  rad = initialRad + increment + noise(x)*10;           //we will input the x coordinate into noise() to generate 
+  x = rad * sin(radians(angle));                        //distortion incremently. Multiplying by 10 makes it more obvious.
+  y = rad * cos(radians(angle));
+  curveVertex(x, y);
+}
+endShape(CLOSE);
+```
 
