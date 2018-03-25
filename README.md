@@ -42,6 +42,30 @@ y360 = rad * cos(radians(359));
 vertex(x359, y359);
 ```
 
+By enclosing all these points within `beginShape()` and `endShape()` tags, we can draw a circle. We can also use a loop to go through every degree easily:
+
+```js
+float rad = 10;
+float x, y;
+
+void setup() {
+  size(500, 500);
+}
+
+void draw() {
+  background(0);
+  noFill();
+  stroke(255);
+
+  beginShape();
+  for (float angle = 0; angle < 360; angle += 1) {
+    x = rad * sin(radians(angle));
+    y = rad * cos(radians(angle));
+    vertex(x, y);
+  }  
+  endShape();
+}
+```
 
 ## Circular motion using trigonometry
 
